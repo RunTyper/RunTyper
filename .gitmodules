@@ -1,0 +1,4 @@
+[submodule "benchmark/test_0/flask"]
+	path = benchmark/test_0/flask
+	url = https://github.com/pallets/flask.git
+	branch = 2.2.x
