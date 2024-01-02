@@ -21,8 +21,8 @@ RUN apt install rustc cargo build-essential libssl-dev zlib1g-dev libncurses5-de
   libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev libffi-dev git watchdog gcc g++ libc6 libc6-dev -y
 RUN apt install libmariadb-dev libmariadbd-dev libmariadbclient-dev vim -y
 
-COPY cpython /cpython
-WORKDIR /cpython
+COPY dyntyper /dyntyper
+WORKDIR /dyntyper
 RUN LDFLAGS=-L/usr/lib/x86_64-linux-gnu/ LIBS=-lmariadb ./configure --with-ensurepip=install --with-pydebug
 # --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --libdir=/usr/lib --localstatedir=/var --includedir=/usr/include
 RUN make -j; make install -j
